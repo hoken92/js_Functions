@@ -98,3 +98,15 @@ const filterArrayOverAge50 = newArray.filter(function (person) {
 console.log(filterArrayOverAge50);
 
 // Map the array to change the “occupation” key to “job” and increment every age by 1.
+
+const jobKey = newArray.map(function (object) {
+  object["job"] = object["occupation"];
+  delete object["occupation"];
+  object.age++;
+  return object;
+});
+
+console.log(jobKey);
+
+// Use the reduce method to calculate the sum of the ages.
+// Then use the result to calculate the average age.
