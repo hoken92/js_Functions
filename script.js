@@ -110,3 +110,13 @@ console.log(jobKey);
 
 // Use the reduce method to calculate the sum of the ages.
 // Then use the result to calculate the average age.
+let sumOfNewArray = newArray.reduce(function (total, obj) {
+  let newSum = 0;
+  return (newSum = total + obj.age);
+}, 0);
+
+console.log(sumOfNewArray);
+
+let avgAgeOfArray = sumOfArray / newArray.length;
+
+console.log(avgAgeOfArray);
