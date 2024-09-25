@@ -128,8 +128,15 @@ console.log(avgAgeOfArray);
 // Take an object and increment its age field.
 function incrementObjectAge(array, n) {
   array.map(function (person) {
-    person.age += n;
-    return person;
+    if (person.age) {
+      person.age += n;
+      person.updated_at = new Date().toTimeString();
+      return person;
+    } else {
+      person.age = 0;
+      person.updated_at = new Date().toTimeString();
+      return person.age;
+    }
   });
   return array;
 }
@@ -140,8 +147,15 @@ console.log(incrementObjectAge(newArray, 6));
 function copyObjectAndAdd(originalArr, n) {
   let copyOfArray = JSON.parse(JSON.stringify(originalArr));
   copyOfArray.map(function (person) {
-    person.age += n;
-    return person;
+    if (person.age) {
+      person.age += n;
+      person.updated_at = new Date().toTimeString();
+      return person;
+    } else {
+      person.age = 0;
+      person.updated_at = new Date().toTimeString();
+      return person.age;
+    }
   });
   return copyOfArray;
 }
